@@ -1,0 +1,48 @@
+CREATE TABLE scandate1
+(
+    name VARCHAR(50) NOT NULL,
+    prodate date NOT NULL
+ );
+ 
+ CREATE TABLE scandate2
+(
+    name VARCHAR(50) NOT NULL,
+    prodate date NOT NULL
+ )
+ 
+  INSERT INTO scandate1
+ 
+VALUES
+('Book1', '2022-12-16'),
+('Book2', '2022-12-16'),
+('Book3', '2022-12-16'),
+('Book4', '2022-12-16'),
+
+('Book3', '2022-12-17'),
+('Book4', '2022-12-17'),
+('Book5', '2022-12-17'),
+('Book6', '2022-12-17'),
+('Book7', '2022-12-17'),
+('Book5', '2022-12-17'),
+
+('Book1', '2022-12-18'),
+('Book6', '2022-12-18'),
+('Book7', '2022-12-18'),
+('Book8', '2022-12-18'),
+('Book9', '2022-12-18'),
+('Book10', '2022-12-18');
+
+
+
+
+
+INSERT INTO scandate2
+SELECT * FROM scandate1
+WHERE prodate="2022-12-17";
+
+SELECT  name FROM scandate1 where prodate="2022-12-16"
+Except
+SELECT  name FROM scandate2 where prodate="2022-12-17"
+
+select * from scandate1;
+select * from scandate2;
